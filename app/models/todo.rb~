@@ -1,0 +1,9 @@
+class Todo < ActiveRecord::Base
+
+  #attr_accessible :description, :content, :is_soon, :is_done
+
+  def find_by_name
+    
+  end
+
+end
