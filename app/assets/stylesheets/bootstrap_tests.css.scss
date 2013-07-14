@@ -1,0 +1,29 @@
+@import "bootstrap";
+
+body{
+	padding: 10px;
+	padding-top: 60px;
+}
+
+@import "bootstrap-responsive";
+
+.submitBtn{
+	margin-bottom:10px;
+}
+
+.button_to{
+	display: inline-block;
+}
+
+.todo{
+	color:blue;
+	height: 25px;
+}
+
+.important{
+      font: bold;
+}
+
+.soon{
+
+}

@@ -1,9 +1,0 @@
-class Todo < ActiveRecord::Base
-  # Make sure that boolean variables are properly set
-  validates :soon, :important, :done, inclusion: { in: [true, false] }
-
-  # Todos must have some kind of description at least
-  validates :description, presence: true
-
-end
-
