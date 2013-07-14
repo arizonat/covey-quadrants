@@ -1,9 +1,52 @@
-<h1> To-Do List </h1>
+<h1> Add a To-Do </h1>
 
-<% @todos.each do |todo| %>
-   <h2><%=todo.description %></h2>
-
-<% link_to "New Post", create_path %>
-
+<%= form_for @newtodo do |f| %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.submit :create %>
+ 
 <% end %>
 
+<div id="is_quad" class="quad">
+
+</div>
+
+<div id="in_quad" class="quad">
+
+</div>
+
+<div id="ns_quad" class="quad">
+
+</div>
+
+<div id="nn_quad" class="quad">
+
+</div>
+
+
+<h1> To-Do List </h1>
+<hr>
+<% @todos.each do |todo| %>
+   <div>
+     <span>Description: <%= todo.description %></span>
+     <span>Important: <%= todo.important %></span>
+     <span>Due soon: <%= todo.soon %></span>
+     
+     <div style="float:right"> <%= link_to "Complete and Remove", todo, method: :delete %></div>
+   </div>
+<% end %>
+
+<br/>
+<br/>
+<h1> Completed List </h1>
+<hr>
+
+<% @dones.each do |todo| %>
+   <p><%=todo.description %></p>
+<% end %>
+
+
+<script>
+$("#todo_description").focus();
+
+</script>

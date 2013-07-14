@@ -2,32 +2,31 @@ class TodosController < ApplicationController
 
   # Initial display of todo list and primary access
   def index
-    @todos = Todo.all
+    
+    # Handle to a brand new todo
+    @newtodo = Todo.new
+    
+    # Handle to all unfinished todos
+    @todos = Todo.where(done: false)
+    
+    # Handles to all finished todos
+    @dones = Todo.where(done: true)
   end
 
   # Creates a new todo, initial fields
   def create
+    @newtodo = Todo.new(params[:newtodo])
+    
+    if @newtodo.save
+      redirect_to todos_path
+    else
+      render :new
+    end
+
+  end
+
+  def new
     @todo = Todo.new
-  end
-
-  # Modifies todo
-  def modify
-  end
-
-  # Deletes a todo
-  def delete
-  end
-
-  # Completes a todo
-  def complete
-  end
-
-  # Shifts the importance category
-  def changeImportance
-  end
-
-  # Shifts the soon category
-  def changeSoon
   end
 
 end

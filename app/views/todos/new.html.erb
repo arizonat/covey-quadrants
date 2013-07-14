@@ -1,1 +1,9 @@
 <h1> Time to create a new todo! </h1>
+
+<%= form_for @newtodo do |f| %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.submit :create %>
+
+<% end %>
+	    

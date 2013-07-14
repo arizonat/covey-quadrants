@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130712050733) do
+ActiveRecord::Schema.define(version: 20130713203652) do
 
   create_table "todos", force: true do |t|
     t.string   "description"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_soon"
-    t.boolean  "is_done"
-    t.boolean  "is_important"
+    t.boolean  "soon"
+    t.boolean  "done"
+    t.boolean  "important"
   end
 
 end
