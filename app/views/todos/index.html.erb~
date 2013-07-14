@@ -44,9 +44,3 @@
 <% @dones.each do |todo| %>
    <p><%=todo.description %></p>
 <% end %>
-
-
-<script>
-$("#todo_description").focus();
-
-</script>
