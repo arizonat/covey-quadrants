@@ -6,8 +6,14 @@
 development:
   adapter: sqlite3
   database: db/development.sqlite3
+#  database: my_dev_postgresql
   pool: 5
   timeout: 5000
+  username: blah
+  password: blah
+
+#  host: localhost
+#  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,11 +21,18 @@ development:
 test:
   adapter: sqlite3
   database: db/test.sqlite3
+#  database: my_dev_postgresql
   pool: 5
   timeout: 5000
+#  username: blah
+#  password: blah
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+#  adapter: sqlite3
+  adapter: postgresql
+#  database: db/production.sqlite3
+  database: my_dev_postgresql
   pool: 5
   timeout: 5000
+  username:
+  password:
