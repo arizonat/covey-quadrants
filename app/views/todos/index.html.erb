@@ -3,44 +3,24 @@
 <%= form_for @newtodo do |f| %>
     <%= f.label :description %>
     <%= f.text_field :description %>
-    <%= f.submit :create %>
+    <%= f.submit :create, class: "submitBtn" %>
  
 <% end %>
 
-<div id="is_quad" class="quad">
-
-</div>
-
-<div id="in_quad" class="quad">
-
-</div>
-
-<div id="ns_quad" class="quad">
-
-</div>
-
-<div id="nn_quad" class="quad">
-
-</div>
 
 
 <h1> To-Do List </h1>
 <hr>
-<% @todos.each do |todo| %>
-   <div>
-     <span>Description: <%= todo.description %></span>
-     <span>Important: <%= todo.important %></span>
-     <span>Due soon: <%= todo.soon %></span>
-     
-     <div style="float:right"> <%= button_to "Complete and Remove", todo, method: :delete %></div>
-   </div>
-<% end %>
 
-<br/>
-<br/>
-<h1> Completed List </h1>
-<hr>
+<div id="todo_list">
+  <ul>
+  <% @todos.each do |todo| %>
+  <li style="list-style-type:none">
 
-<% @dones.each do |todo| %>
-   <p><%=todo.description %></p>
-<% end %>
+     <%= button_to "X", todo, method: :delete %> 
+     <div style="display:inline-block"><%= todo.description %></div>
+
+  </li>
+  <% end %>
+  </ul>
+</div>

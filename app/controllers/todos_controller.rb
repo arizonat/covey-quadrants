@@ -36,7 +36,7 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
-  # Allow for mass param setting
+  # Allow for "mass" param setting
   private
   def todo_params
     params.require(:todo).permit(:description)

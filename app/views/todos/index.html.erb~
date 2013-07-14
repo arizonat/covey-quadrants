@@ -7,40 +7,16 @@
  
 <% end %>
 
-<div id="is_quad" class="quad">
-
-</div>
-
-<div id="in_quad" class="quad">
-
-</div>
-
-<div id="ns_quad" class="quad">
-
-</div>
-
-<div id="nn_quad" class="quad">
-
-</div>
 
 
 <h1> To-Do List </h1>
 <hr>
 <% @todos.each do |todo| %>
-   <div>
+   <div class="hehe">
      <span>Description: <%= todo.description %></span>
      <span>Important: <%= todo.important %></span>
      <span>Due soon: <%= todo.soon %></span>
      
-     <div style="float:right"> <%= link_to "Complete and Remove", todo, method: :delete %></div>
+     <div style="float:right"> <%= button_to "Complete and Remove", todo, method: :delete %></div>
    </div>
-<% end %>
-
-<br/>
-<br/>
-<h1> Completed List </h1>
-<hr>
-
-<% @dones.each do |todo| %>
-   <p><%=todo.description %></p>
 <% end %>
