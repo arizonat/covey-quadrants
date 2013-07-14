@@ -32,7 +32,7 @@
      <span>Important: <%= todo.important %></span>
      <span>Due soon: <%= todo.soon %></span>
      
-     <div style="float:right"> <%= button_to "Complete and Remove", todo, method: :delete %></div>
+     <div style="float:right"> <%= link_to "Complete and Remove", todo, method: :delete %></div>
    </div>
 <% end %>
 
