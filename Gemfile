@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'bootstrap-sass'
-gem 'twitter-bootstrap-rails', '~> 2.0rc0'
-gem 'less-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
