@@ -5,6 +5,7 @@ class Todo < ActiveRecord::Base
   # Todos must have some kind of description at least
   validates :description, presence: true
 
+  # Before we save, create, or update, make sure these have values
   before_validation :setDefaults, on: [:create, :update, :save]
 
   def setDefaults

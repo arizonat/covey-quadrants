@@ -3,24 +3,78 @@
 <%= form_for @newtodo do |f| %>
     <%= f.label :description %>
     <%= f.text_field :description %>
-    <%= f.submit :create, class: "submitBtn" %>
- 
+    <%= f.submit :Create, class: :submitBtn %>
+    <%= f.label :important %>
+    <%= f.check_box :important, checked: true %>
+    <%= f.label :soon %>
+    <%= f.check_box :soon %>
+
 <% end %>
-
-
 
 <h1> To-Do List </h1>
 <hr>
 
-<div id="todo_list">
+<ul style="margin:0px">
+
+<li style="list-style-type:none; padding-left:0px">
+<div id="is_quad" class="todo_quad">
+  
+  <div class="quad_name">important/soon</div>
+
   <ul>
-  <% @todos.each do |todo| %>
-  <li style="list-style-type:none">
-
-     <%= button_to "X", todo, method: :delete %> 
-     <div style="display:inline-block"><%= todo.description %></div>
-
-  </li>
-  <% end %>
+    <% @todoh[:is].each do |todo| %>
+    <li style="list-style-type:none">
+      
+      <%= button_to "X", todo, method: :delete %>
+      <div class="todo"><%= todo.description %></div>
+      
+    </li>
+    <% end %>
   </ul>
 </div>
+
+<div id="in_quad" class="todo_quad">
+  <div class="quad_name">important/later</div>
+  <ul>
+    <% @todoh[:in].each do |todo| %>
+    <li style="list-style-type:none">
+      
+      <%= button_to "X", todo, method: :delete %>
+      <div class="todo"><%= todo.description %></div>
+      
+    </li>
+    <% end %>
+  </ul>
+</div>
+</li>
+
+<li style="list-style-type:none; padding-left:0px">
+  <div id="ns_quad" class="todo_quad">
+      <div class="quad_name">unimportant/soon</div>
+  <ul>
+    <% @todoh[:ns].each do |todo| %>
+    <li style="list-style-type:none">
+      
+      <%= button_to "X", todo, method: :delete %>
+      <div class="todo"><%= todo.description %></div>
+      
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="nn_quad" class="todo_quad">
+  <div class="quad_name">unimportant/later</div>
+  <ul>
+    <% @todoh[:nn].each do |todo| %>
+    <li style="list-style-type:none">
+      
+      <%= button_to "X", todo, method: :delete %>
+      <div class="todo"><%= todo.description %></div>
+      
+    </li>
+    <% end %>
+  </ul>
+</div>
+</li>
+</ul>

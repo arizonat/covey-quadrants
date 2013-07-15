@@ -8,10 +8,13 @@ class TodosController < ApplicationController
 
     # Handles to unfinished todos in each quadrant
     # TODO: Possibly faster to have 1 database query and split it afterwards
-    @is_todos = Todo.where(done: false, important: true, soon: true)
-    @in_todos = Todo.where(done: false, important: true, soon: false)
-    @ns_todos = Todo.where(done: false, important: false, soon: true)
-    @nn_todos = Todo.where(done: false, important: false, soon: false)
+
+    @todoh = {
+      :is => Todo.where(done: false, important: true, soon: true),
+      :in => Todo.where(done: false, important: true, soon: false),
+      :ns => Todo.where(done: false, important: false, soon: true),
+      :nn => Todo.where(done: false, important: false, soon: false)
+    }
 
     @todos = Todo.all
 
@@ -23,6 +26,13 @@ class TodosController < ApplicationController
   def create
     @newtodo = Todo.create(todo_params)
     @newtodo.save
+
+    redirect_to todos_path
+  end
+
+  # Edit the importance, description, soonness
+  def edit
+    @todo = Todo.find(params[:id])
 
     redirect_to todos_path
   end
@@ -39,7 +49,7 @@ class TodosController < ApplicationController
   # Allow for "mass" param setting
   private
   def todo_params
-    params.require(:todo).permit(:description)
+    params.require(:todo).permit(:description, :important, :soon)
   end
 
 end

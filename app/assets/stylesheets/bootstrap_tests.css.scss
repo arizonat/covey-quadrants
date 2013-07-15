@@ -2,10 +2,18 @@
 
 body{
 	padding: 10px;
-	padding-top: 60px;
+//	padding-top: 60px;
 }
 
 @import "bootstrap-responsive";
+
+.quad_name{
+	opacity: 0.9;
+	font-size: 20px;
+	color: white;
+	margin-left: 15px;
+	margin-bottom: 12px;
+}
 
 .submitBtn{
 	margin-bottom:10px;
@@ -16,14 +24,36 @@ body{
 }
 
 .todo{
-	color:blue;
-	height: 25px;
+	display: inline-block;
+
+	color:white;
 }
 
 .important{
       font: bold;
 }
 
-.soon{
+.todo_quad{
+	padding-top:15px;
+	width: 50%;
+	height: 400px;
+	overflow: scroll;
+	float:left;
 
+}
+
+#is_quad{
+	background-color:#4DBE77;
+}
+
+#in_quad{
+	background-color:#488DA7;
+}
+
+#ns_quad{
+	background-color:#FFB667;
+}
+
+#nn_quad{
+	background-color:#FF8267;
 }
