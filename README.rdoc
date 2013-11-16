@@ -2,6 +2,7 @@
 
 A To-Do list web application based on Randy Pausch's Time Management lecture. Written using RoR.
 
+http://www.youtube.com/watch?v=oTugjssqOT0#t=1278
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Found out later, actually called Covey's Quadrants.
+
